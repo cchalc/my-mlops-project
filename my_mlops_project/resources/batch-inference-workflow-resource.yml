@@ -22,7 +22,7 @@ resources:
             notebook_path: ../deployment/batch_inference/notebooks/BatchInference.py
             base_parameters:
               env: ${bundle.target}
-              input_table_name: taxi_scoring_sample  # TODO: create input table for inference
+              input_table_name: ${bundle.target}.my-mlops-project.feature_store_inference_input #TODO: create input table for inference
               output_table_name: ${bundle.target}.my-mlops-project.predictions
               model_name: ${bundle.target}.my-mlops-project.${var.model_name}
               # git source information of current ML resource deployment. It will be persisted as part of the workflow run
@@ -31,6 +31,7 @@ resources:
       schedule:
         quartz_cron_expression: "0 0 11 * * ?" # daily at 11am
         timezone_id: UTC
+        pause_status: PAUSED
       <<: *permissions
       # If you want to turn on notifications for this job, please uncomment the below code,
       # and provide a list of emails to the on_failure argument.
