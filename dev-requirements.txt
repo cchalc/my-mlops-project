@@ -1,0 +1,3 @@
+databricks-connect==14.1.*
+databricks-sql-cli
+databricks-sql-connector
