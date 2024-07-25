@@ -14,6 +14,7 @@ include:
   # Resources folder contains ML artifact resources for the ml project that defines model and experiment
   # And workflows resources for the ml project including model training -> validation -> deployment,
   # batch inference, data monitoring, metric refresh, alerts and triggering retraining
+  # tmp
   - ./resources/*.yml
 
 # Deployment Target specific values for workspace
